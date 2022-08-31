@@ -13,8 +13,13 @@
                 <div id="featured-post-title">
                     <h2>{{title}}</h2>
                 </div>
-                <div id="post-infobox">
-                    {{author}} {{dateCreated}} {{category}}
+                <div id="featured-post-infobox" class="post-infobox">
+                    <i class="fa-solid fa-layer-group"></i>
+                    {{category}}
+                    <i class="fa-solid fa-user"></i>
+                    {{author}} 
+                    <i class="fa-solid fa-calendar"></i>
+                    {{dateCreated}}
                 </div>
                 <section id="featured-post-text" class="description-paragraph">
                     {{process-markdown content}}
@@ -33,7 +38,16 @@
                         <h2>{{title}}</h1>
                     </div>
                     <div class="post-infobox">
-                        {{author}} {{dateCreated}} {{category}}
+                        <div class="post-infobox-category">
+                            <i class="fa-solid fa-layer-group"></i>
+                            {{category}}
+                        </div>
+                        <div class="post-infobox-about">
+                            <i class="fa-solid fa-user"></i>
+                            {{author}} 
+                            <i class="fa-solid fa-calendar"></i>
+                            {{dateCreated}}
+                        </div>
                     </div>
                     <section class="post-description description-paragraph">
                         {{process-markdown content}}
