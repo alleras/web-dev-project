@@ -1,0 +1,47 @@
+{{>header}}
+
+<main id="main-content">
+    <article id="featured-post">
+        <div class="inner-container">
+            {{#with featuredPost}}
+                <div id="featured-post-heading">
+                    <h1>Featured Post</h1>
+                </div>
+                <div id="featured-post-image-container">
+                    <img src="{{imgPath}}" alt="{{imgDescription}}" />
+                </div>
+                <div id="featured-post-title">
+                    <h2>{{title}}</h2>
+                </div>
+                <div id="post-infobox">
+                    {{author}} {{dateCreated}} {{category}}
+                </div>
+                <section id="featured-post-text" class="description-paragraph">
+                    {{process-markdown content}}
+                </div>
+            {{/with}}
+        </div>
+    </article>
+    <div class="inner-container">
+        {{#each posts}}
+            <article class="post">
+                <div class="post-img">
+                    <img src="{{imgPath}}" alt="{{imgDescription}}" />
+                </div>
+                <section class="post-content">
+                    <div class="post-title">
+                        <h2>{{title}}</h1>
+                    </div>
+                    <div class="post-infobox">
+                        {{author}} {{dateCreated}} {{category}}
+                    </div>
+                    <section class="post-description description-paragraph">
+                        {{process-markdown content}}
+                    </section>
+                </section>
+            </article>
+        {{/each}}
+    </div>
+</main>
+
+{{>footer}}

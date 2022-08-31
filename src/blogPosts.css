@@ -1,0 +1,89 @@
+/* Featured post styling */
+/* These are all IDs as they should only appear once on the page */
+
+#main-content{
+    margin-top: 0;
+}
+
+#featured-post{
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    margin-bottom: 45px;
+    padding: 20px 0;
+}
+
+#featured-post-heading h1 {
+    margin-top: 0;
+}
+
+#featured-post-image-container {
+    position: relative;
+}
+
+#featured-post-image-container img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#featured-post-title h2 {
+    margin-block-end: .2em;
+}
+
+/* Shared between Featured and Individual Posts */
+.description-paragraph p {
+    font-size: .85rem;
+    text-align: justify;
+    margin: 0 0 10px 0;
+}
+@media (min-width: 750px) {
+    .description-paragraph p {
+        font-size: revert;
+    }
+}
+/* Individual post styling */
+
+.post {
+    display: flex;
+    margin-bottom: 2.5rem;
+}
+.post-img {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 35%;
+}
+.post-content{
+    margin-left: 1rem;
+    flex: 1;
+}
+.post-title h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+.post-description{
+    display: none;
+}
+/* Larger than mobile */
+@media (min-width: 440px) {
+    .post-title h2 {
+        font-size: 1rem;
+    }
+    .post-description {
+        display: block;
+    }
+}
+/* Larger than phablet */
+@media (min-width: 550px) {
+    .post-title h2 {
+        font-size: revert;
+    }
+    .post-img{
+        flex-basis: 25%;
+    }
+}
+
+.post-img img{
+    width: 100%;
+    object-fit: cover;
+}

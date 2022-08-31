@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>First Time Homebuyer - Your Resource for a Big Leap</title>
+        
+        <link rel="stylesheet" href="style/normalize.css">
+        <link rel="stylesheet" href="style/style.css">
+
+        <!-- Outside libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+        <!-- Util libraries (own) -->
+        <script src="js/util.js"></script>
+
+        <!-- Page specific CSS -->
+        <link rel="stylesheet" href="src/index.css">
+    </head>
+
+    <body>
+        <!-- Placeholder, the body will be filled by the template located in /src/pageName.hbs -->
+    </body>
+
+    <script>        
+        window.addEventListener('load', async (event) => {        
+            await initializeLayouts('./src/index.hbs', null);
+
+            // An non-standard event for when the entire template is initialized. This allows custom
+            // JavaScript included in this file to interact with elements nested inside of the templates.
+            const ev = new Event('layout-initialized');
+            window.dispatchEvent(ev);
+        });
+    </script>
+    <script src="js/css-helpers.js"></script>
+    <script src="js/carousel.js"></script>
+</html>

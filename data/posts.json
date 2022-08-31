@@ -1,0 +1,37 @@
+{
+    "featuredPost": {
+        "title": "Decorate your Living Room",
+        "imgPath": "img/livingRoomPic.webp",
+        "imgDescription": "Decorate your living room",
+        "author": "Agustin Lleras",
+        "dateCreated": "April 23rd, 2022",
+        "category": "Home Improvement",
+        "content": "GM Ian Nepomniachtchi began game eight in the **2021 FIDE World Championship** with a beautifully crafted defense against a Petroff opening. He faltered in the end game stage of the match after blundering a pawn and having his position collapse thereafter. Carlsen extends his lead 5-3 over his challenger."
+    },
+    "posts": [
+        {
+            "title": "How To Budget For Your New Home",
+            "imgPath": "./img/article1.webp",
+            "imgDescription": "Decorate your living room",
+            "author": "Agustin Lleras",
+            "dateCreated": "April 23rd, 2022",
+            "content": "The real estate market moves in a cycle, so when the market is up or down, none of it is making any sense whatsoever. We'll guide you through how to speak with realtors"
+        },
+        {
+            "title": "How To Budget For Your New Home",
+            "imgPath": "./img/article2.webp",
+            "imgDescription": "Decorate your living room",
+            "author": "Agustin Lleras",
+            "dateCreated": "April 23rd, 2022",
+            "content": "The real estate market moves in a cycle, so when the market is up or down, none of it is making any sense whatsoever. We'll guide you through how to speak with realtors"
+        },
+        {
+            "title": "How To Budget For Your New Home",
+            "imgPath": "./img/article3.webp",
+            "imgDescription": "Decorate your living room",
+            "author": "Agustin Lleras",
+            "dateCreated": "April 23rd, 2022",
+            "content": "The real estate market moves in a cycle, so when the market is up or down, none of it is making any sense whatsoever. We'll guide you through how to speak with realtors"
+        }
+    ]
+}
