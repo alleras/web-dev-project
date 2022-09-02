@@ -5,7 +5,7 @@
     margin-top: 0;
 }
 #featured-post{
-    background-color: #f9f9f9;
+    background-color: var(--featured-section-bg);
     border-radius: 15px;
     margin-bottom: 45px;
     padding: 20px 0;
@@ -38,18 +38,21 @@
 
 /* Shared between Featured and Individual Posts */
 .post-infobox {
-   font-size: .8rem; 
+   font-size: .78rem; 
    color: rgb(131, 131, 131);
 }
 .post-infobox i{
     color: rgb(145, 145, 145);
+    margin-right: 5px;
+    font-size: .6rem;
 }
-.post-infobox > * {
-    margin-bottom: 5px;
+.post-infobox-item{
+    display: inline-block;
     margin-right: 5px;
 }
 .post-infobox-category {
     display: block;
+    margin-bottom: 5px;
 }
 .post-infobox-about{
     display: none;
@@ -74,11 +77,24 @@
 .post {
     display: flex;
     margin-bottom: 2.5rem;
+    transition: all .15s ease;
+}
+.post:hover{
+    box-shadow: 0px 1px 15px rgba(0,0,0,.1);
+}
+@media (min-width: 980px){
+    .post{
+        padding-right: .5em;
+    }
 }
 .post-img {
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: 35%;
+}
+.post-img img {
+    height: 100%;
+    width: 100%;
 }
 .post-content{
     margin-left: 1rem;
@@ -86,8 +102,14 @@
 }
 .post-title h2 {
     margin-top: 0;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     font-size: 1rem;
+}
+.post-title h2 a {
+    color: #474e57;
+}
+.post-title h2 a:hover {
+    color: var(--brand-color);
 }
 .post-description{
     display: none;
@@ -112,4 +134,65 @@
 .post-img img{
     width: 100%;
     object-fit: cover;
+}
+
+#blog-grid{
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: 1fr;
+}
+#blog-posts{
+    padding-top: .5em;
+}
+#blog-grid-side{
+    display: block;
+}
+@media (min-width: 980px) {
+    #blog-grid-side{
+        display: block;
+    }
+    #blog-grid {
+        grid-template-columns: 3fr 1fr;
+    }
+}
+.blog-grid-side-panel{
+    background-color: #f9f9f9;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    font-size: .9rem;
+}
+.blog-grid-side-panel h3 {
+    color: black;
+    margin-top: 0px;
+    text-align: center;
+}
+.side-panel-element::before {
+    color: #8e8e8e;
+    content: "• ";
+    font-size: 1.5em;
+}
+.side-panel-element {
+    text-align: justify;
+    color: #8e8e8e;
+    font-size: .8em;
+}
+.side-panel-element a{
+    color: #8e8e8e;
+}
+.side-panel-element a:hover{
+    color: var(--brand-color);
+}
+#blog-posts-seemore {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+#blog-posts-seemore a {
+    display: inline-block;
+    color: #FFF;
+    background-color: var(--brand-color);
+    padding: 10px 15px;
+    border-radius: 999px;
+    font-size: .9em;
+    font-weight: bold;
 }

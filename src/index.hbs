@@ -1,27 +1,38 @@
 {{>header}}
 
+<!-- Just a section identifier for the carousel -->
 <section id="main-carousel">
+    <!-- Standard inner-container div, to make the content be centered and have a fixed width -->
     <div class="inner-container">
         <div class="carousel-wrapper">
+            <!-- Button to move the slide to the left -->
             <button class="slide-arrow" id="slide-arrow-prev">
-                &#8249;
+                &#8249; <!-- Character code for left chevron -->
             </button>
-
+            <!-- -->
             <button class="slide-arrow" id="slide-arrow-next">
-                &#8250;
+                &#8250; <!-- Character code for right chevron -->
             </button>
-
+            <!-- List of all the slides that will be translated to the left or right depending on selction -->
             <ul class="slides-container" id="slides-container">
-                <li class="slide" style="background-color:red"></li>
-                <li class="slide" style="background-color:white"></li>
-                <li class="slide" style="background-color:blue"></li>
-                <li class="slide" style="background-color:yellow"></li>
+                <!-- Using Handlebars to avoid repetition. Slides content is defined in /data/slides.json -->
+                {{#each carouselSlides}}
+                    <!-- Individual slides -->
+                    <li class="slide" style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url('{{path}}');">
+                        <div class="slide-description">
+                            <h1><a href="blogPosts.html">{{title}}</a></h1>
+                            <h3>{{subTitle}}</h3>
+                        </div>
+                    </li>
+                {{/each}}
             </ul>
         </div>
     </div>
 </section>
 
+<!-- Main focus content of the page -->
 <main class="main-content">
+    <!-- Standard inner-container div, to make the content be centered and have a fixed width -->
     <div class="inner-container">
         <div class="greet-box">
             <h4>Take the first step.</h4>

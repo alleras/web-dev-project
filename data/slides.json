@@ -1,0 +1,24 @@
+{
+    "slides": [
+        {
+            "path": "img/slide1.jpg",
+            "title": "Big City Living",
+            "subTitle": "We show you what it takes, where it takes you, and what it's like to live in a big city."
+        }, 
+        {
+            "path": "img/slide2.jpg",
+            "title": "White Picket Fence, and More",
+            "subTitle": "All the tips and tricks to home improvement, and making your home stand out."
+        },
+        {
+            "path": "img/slide3.jpg",
+            "title": "Luxury Living",
+            "subTitle": "Luxury, space and light. Is it really worth it?"
+        }, 
+        {
+            "path": "img/slide4.jpg",
+            "title": "Make The Best Out of Your Space",
+            "subTitle": "We take you through the process of turning a space into an ambient."
+        }
+    ]
+}

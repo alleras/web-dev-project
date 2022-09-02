@@ -11,6 +11,7 @@
 
         <!-- Outside libraries -->
         <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+        <script src="https://kit.fontawesome.com/4db9c7db59.js" crossorigin="anonymous"></script>
 
         <!-- Util libraries (own) -->
         <script src="js/util.js"></script>
@@ -24,8 +25,12 @@
     </body>
 
     <script>        
-        window.addEventListener('load', async (event) => {        
-            await initializeLayouts('./src/index.hbs', null);
+        window.addEventListener('load', async (event) => { 
+            // Load the carousel slides
+            let response = await fetch('./data/slides.json');
+            let slidesJSON = await response.json();
+
+            await initializeLayouts('./src/index.hbs', {"carouselSlides": slidesJSON.slides});
 
             // An non-standard event for when the entire template is initialized. This allows custom
             // JavaScript included in this file to interact with elements nested inside of the templates.

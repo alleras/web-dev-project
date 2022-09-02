@@ -14,12 +14,15 @@
                     <h2>{{title}}</h2>
                 </div>
                 <div id="featured-post-infobox" class="post-infobox">
-                    <i class="fa-solid fa-layer-group"></i>
-                    {{category}}
-                    <i class="fa-solid fa-user"></i>
-                    {{author}} 
-                    <i class="fa-solid fa-calendar"></i>
-                    {{dateCreated}}
+                    <div class="post-infobox-item">
+                        <i class="fa-solid fa-layer-group"></i>{{category}}
+                    </div>
+                    <div class="post-infobox-item">
+                        <i class="fa-solid fa-user"></i>{{author}} 
+                    </div>
+                    <div class="post-infobox-item">
+                        <i class="fa-solid fa-calendar"></i>{{dateCreated}}
+                    </div>
                 </div>
                 <section id="featured-post-text" class="description-paragraph">
                     {{process-markdown content}}
@@ -27,34 +30,64 @@
             {{/with}}
         </div>
     </article>
+
     <div class="inner-container">
-        {{#each posts}}
-            <article class="post">
-                <div class="post-img">
-                    <img src="{{imgPath}}" alt="{{imgDescription}}" />
+        <div id="blog-grid">
+            <section id="blog-posts">
+                {{#each posts}}
+                    <article class="post">
+                        <div class="post-img">
+                            <a href="#blog-posts"><img src="{{imgPath}}" alt="{{imgDescription}}" /></a>
+                        </div>
+                        <section class="post-content">
+                            <div class="post-title">
+                                <h2><a href="#blog-posts">{{title}}</a></h1>
+                            </div>
+                            <div class="post-infobox">
+                                <div class="post-infobox-category">
+                                    <div class="post-infobox-item">
+                                        <i class="fa-solid fa-layer-group"></i>{{category}}
+                                    </div>
+                                </div>
+                                <div class="post-infobox-about">
+                                    <div class="post-infobox-item">
+                                        <i class="fa-solid fa-user"></i>{{author}} 
+                                    </div>
+                                    <div class="post-infobox-item">
+                                        <i class="fa-solid fa-calendar"></i>{{dateCreated}}
+                                    </div>
+                                </div>
+                            </div>
+                            <section class="post-description description-paragraph">
+                                {{process-markdown content}}
+                            </section>
+                        </section>
+                    </article>
+                {{/each}}
+
+                <div id="blog-posts-seemore">
+                    <a href="#blog-posts">Read more...</a>
                 </div>
-                <section class="post-content">
-                    <div class="post-title">
-                        <h2>{{title}}</h1>
+            </section>
+            <section id="blog-grid-side">
+                <div class="blog-grid-side-panel">
+                    <h3>Markets in South Carolina</h3>
+                    <div class="blog-grid-side-panel-content">
+                        <p class="side-panel-element"><a href="#blog-posts">'Attainable' housing coming to Bull Street development in Columbia</a></p>
+                        <p class="side-panel-element"><a href="#blog-posts">Home prices in SC soared by double digits in July</a></p>
+                        <p class="side-panel-element"><a href="#blog-posts">Housing development halted in Goose Creek over stormwater damage</a></p>
                     </div>
-                    <div class="post-infobox">
-                        <div class="post-infobox-category">
-                            <i class="fa-solid fa-layer-group"></i>
-                            {{category}}
-                        </div>
-                        <div class="post-infobox-about">
-                            <i class="fa-solid fa-user"></i>
-                            {{author}} 
-                            <i class="fa-solid fa-calendar"></i>
-                            {{dateCreated}}
-                        </div>
+                </div>
+                <div class="blog-grid-side-panel">
+                    <h3>Homebuyer Trends</h3>
+                    <div class="blog-grid-side-panel-content">
+                        <p class="side-panel-element"><a href="#blog-posts">Will the housing market keep cooling off? Experts weigh in</a></p>
+                        <p class="side-panel-element"><a href="#blog-posts">Buyers gaining more power as market shifts</a></p>
+                        <p class="side-panel-element"><a href="#blog-posts">What Is Real Estate Social Networking and Their Platforms?</a></p>
                     </div>
-                    <section class="post-description description-paragraph">
-                        {{process-markdown content}}
-                    </section>
-                </section>
-            </article>
-        {{/each}}
+                </div>
+            </section>
+        </div>
     </div>
 </main>
 
