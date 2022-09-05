@@ -22,16 +22,19 @@
 // This function will read a local file using fetch() to gather the contents of the Handlebars template as a string
 // so it can then be used with the compile() or registerPartial() function
 async function readHandlebarsFile(templatePath){
+    // Make sure that if the supplied template doesn't exist, or is empty, we throw an error
     if(templatePath === null || templatePath === '') 
         throw 'Handlebars file path is invalid: ' + templatePath;
 
+    // We fetch the site for the file specified in templatePath
     const response = await fetch(templatePath);
-
+    // Return the raw text of the handlebars template
     return response.text();
 }
 
 // General load of partials, I use layout elements such as header/footer/sidebar (not in this list) as partials to make my development easier
 async function loadTemplatesAsPartials(){
+    // Header and Footer partials are always added to the pages
     Handlebars.registerPartial('header', await readHandlebarsFile('./layouts/header.hbs'));           
     Handlebars.registerPartial('footer', await readHandlebarsFile('./layouts/footer.hbs'));           
 }
@@ -42,8 +45,8 @@ async function loadTemplatesAsPartials(){
 // Note: This should be called on document load, but after data is gathered so it can be passed through.
 async function initializeLayouts(contentPath, data){
     await loadTemplatesAsPartials();
-
-    // Load the content template
+    // Load the content template. This step first reads it from a file, then compiles it
     var hbsContent = Handlebars.compile(await readHandlebarsFile(contentPath));
-    document.body.innerHTML = hbsContent(data); // hbs-content-target will be a convention in all my pages, to maintain consistency
+    // Inject hbsContent (which is a collection of DOM nodes at this point) into the site
+    document.body.innerHTML = hbsContent(data);
 }

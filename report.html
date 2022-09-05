@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Character Set Definition for the Website-->
+        <meta charset="UTF-8">
+        <!-- Definition of the viewport, in this case we define that the content will be constrained within the width of the screen, at a scale of 1 to 1-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title for the page -->
+        <title>Report - Agustin Lleras</title>
+        <!-- Icon for the Page -->
+        <link rel="icon" href="/img/favicon.ico">
+        <!-- Normalize.css stylesheet taken from the Skeleton CSS project, to help me make the site look more consistent -->
+        <link rel="stylesheet" href="style/normalize.css">
+        <!-- General stylesheets that are used throughout all pages -->
+        <link rel="stylesheet" href="style/style.css">
+
+        <script src="https://kit.fontawesome.com/4db9c7db59.js" crossorigin="anonymous"></script>  
+
+        <!-- Reusing this for the accordion! -->
+        <link rel="stylesheet" href="src/faq.css">
+    </head>
+
+    <body>
+        <div class="inner-container" style="margin-top: 5em">
+            <h1>Agustin Lleras</h1> 
+            <h3>Web Development Final Assignment</h3>
+            <p>
+                After seeing how the rental market has been crazy for so long after the pandemic, I've been more and more interested in becoming a homeowner. This sparked the idea to make a website where I can project a fictitious non-profit that helps people along this very stressful journey. I could see an organization like this offering services, tools and information, all in one place. So that's exactly what I show on my site.
+            </p>
+            <section id="faq-section">
+                <button class="accordion active">    
+                    State 3 things that have inspired you when creating your website.
+                    <i class="accordion-expand fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="panel" style="display: block">
+                    <p>1. Seeing the amount of information that is out there regarding buying a house, and how complicated the process is. This mainly inspired the thought that a WebSite where all that was condensed was a good option for my assignment.</p>
+                    <p>2. I was very much inspired, oddly, by Windows 11's design language. I loved implementing the slightly rounded corners and slight accents that are present throughout that Operating System. Paying attention to design is one of my goals when working on a website.</p>
+                    <p>3. Other blogs I have worked on, and Handlebars.js. The idea to make a blog came very quickly for me when watching the videos for the class pertaining Handlebars. I thought it was a very neat way to template things that resembled the way Wordpress works (you design one template, and then the system loops through the data and shows as many as needed). </p>
+                </div>
+
+                <button class="accordion">    
+                    State 3 ways in which your site is accessible.
+                    <i class="accordion-expand fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="panel">
+                    <p>1. I tried to make good use of good contrast ratios for colors in links and buttons. The intention of it should be clear enough that the user knows it's an action that needs to or can be performed, and the text should be legible.</p>
+                    <p>2. The site uses styles that make it obvious that an object is being interacted with, even if the mouse is not involved in the action. An example of this is the input boxes in the About site.</p>
+                    <p>3. I added accessibility options such as bigger text (for people with impaired sight) and underlining links, for users that need help identifying if a button or text will take them somewhere or not.</p>
+                </div>
+                
+                <button class="accordion">    
+                    State 3 ways in which you have considered usability in your site.
+                    <i class="accordion-expand fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="panel">
+                    <p>1. I considered user interactions with elements such as the carousel and the image collage to be a great opportunity for usability. These objects can be interacted with, which enhances the user experience or the amount of information that the website can show.</p>
+                    <p>2. The calculator page was also a big usability item in my list. It allows the user to take something more than just general information out of it, instead providing something suited to their needs.</p>
+                    <p>3. A smaller, albeit neat, usability component is the "Scroll to Top" button, which makes navigation easier if users do not want to be abusing their mouses when scrolling!</p>
+                </div>
+
+                <button class="accordion">    
+                    State 3 things you had to learn/find out by yourself when creating your site, and describe how you did that.
+                    <i class="accordion-expand fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="panel">
+                    <p>1. I had to relearn how to make a carousel. I learned how to make them in the web many years ago, and most of those techniques were already outdated. So I found a tutorial online that walks you through the code that needs to be added to the HTML, CSS and JS. Then, I made sense of it by seeing how it worked and what it did. After that I modified it to adapt and extend its functionality for my site.</p>
+                    <p>2. I found out that styling can be done a lot easier for the mobile if it's developed first, and then things are adapted to the desktop. It looks like working with the constraints of the smaller screens makes us code in a smarter and cleaner way.</p>
+                    <p>3. I had to make some research on several JavaScript Browser functions. Fetch, for instance, was a function that I had already used, but I didn't know it could easily be used to load text in a file retrieved locally. This became the basis for my templating system. Another thing I researched more in depth was the event listeners in JavaScript, as a consequence of me using templates.</p>
+                </div>
+
+                <button class="accordion">    
+                    What aspect(s) of your work do you think worked well and why?
+                    <i class="accordion-expand fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="panel">
+                    <p>My usage of <b>Handlebars.js</b> as a templating system allowed me to not have to rewrite the same code on each site that I published, instead I was able to make .hbs files with the templates for the <b>Header</b> and <b>Footer</b>. Then, I turned these files into <b>Handlebars Partials</b> which I loaded with JavaScript and dynamically incorporated into the code, along with the content of each page. Initially, I wanted to make templates as separate files to keep my content clean, but Handlebars (browser) does not offer that funcionality. It is, instead, available on server-based versions of it. I was able to solve this problem by using JavaScript Fetch() to get the content of the templates and register them as partials. I go more in depth in the comments of the <b>/js/util.js</b> file.</p>
+
+                    <p>Another element I feel worked very well was the overall design. I was able to find a simple yet very cohesive design language for this specific WebSite, which made my job a lot easier as I didn't have to style an excessive amount of objects.</p>
+                </div>
+
+                <button class="accordion">    
+                    What aspect(s) of your work could be improved, and how might you do things differently another time?
+                    <i class="accordion-expand fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="panel">
+                    <p>In general, I believe I could handle the responsiveness of the site better. This could be solved by becoming more detailed in my media breakpoints and tailoring for each viewport. There are some elements that currently resize poorly when they are in between common sizes. I don't expect that to be a big problem, but the perfectionist in me would like to see solved.</p>
+                </div>
+
+                <button class="accordion">    
+                    What resources were used when creating your work?
+                    <i class="accordion-expand fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="panel">
+                    <p>[1] D. Gamache, <b>Normalize.css</b>, 2014 [Online]. Available: <a href="https://github.com/dhg/Skeleton">https://github.com/dhg/Skeleton</a></p>
+                    <p>[2] Fonticons, Inc, <b>Font Awesome Icons</b>, 2022 [Online]. Available: <a href="https://fontawesome.com/">https://fontawesome.com/</a></p>
+                    <p>[3] E. Soares dos Santos, <b>Showdown.js</b>, 2022 [Online]. Available <a href="https://github.com/showdownjs/showdown">https://github.com/showdownjs/showdown</a></p>
+                    <p>[4] API Ninjas, <b>API Ninjas Mortgage Calculator API</b>, 2022 [Online]. Available: <a href="https://api-ninjas.com/api/mortgagecalculator">https://api-ninjas.com/api/mortgagecalculator</a></p>
+                    <p>[5] Y. Katz, <b>Handlebars.js</b>, 2022 [Online]. Available: <a href="https://handlebarsjs.com/">https://handlebarsjs.com/</a></p>
+                    <p>[6] Unsplash, <b>Images from Unsplash</b>, 2022 [Online]. Available: <a href="https://unsplash.com/">https://unsplash.com/</a></p>
+                    <p>[7] Free Code Camp, <b>'How to create an image gallery with CSS Grid'</b>, 2018 [Online]. Available: <a href="https://www.freecodecamp.org/news/how-to-create-an-image-gallery-with-css-grid-e0f0fd666a5c/">https://www.freecodecamp.org/news/how-to-create-an-image-gallery-with-css-grid-e0f0fd666a5c/</a></p>
+                    <p>[8] D. Valente, <b>Answer to: 'Javascript: how to change the style of all links in a page?'</b>, 2012 [Online]. Available: <a href="https://stackoverflow.com/questions/10766328/javascript-how-to-change-the-style-of-all-links-in-a-page">https://stackoverflow.com/questions/10766328/javascript-how-to-change-the-style-of-all-links-in-a-page</a></p>
+                    <p>[9] W3 Schools, <b>'How TO - Collapsibles/Accordion'</b>, 2022 [Online]. Available: <a href="https://www.w3schools.com/howto/howto_js_accordion.asp">https://www.w3schools.com/howto/howto_js_accordion.asp</a></p>
+                    <p>[10] J. Abu, <b>'How To Build a Simple Carousel With Vanilla JavaScript (14 Lines of Code!)'</b>, 2022, [Online]. Available: <a href="https://webdesign.tutsplus.com/tutorials/how-to-build-a-simple-carousel-with-vanilla-javascript--cms-41734 ">https://webdesign.tutsplus.com/tutorials/how-to-build-a-simple-carousel-with-vanilla-javascript--cms-41734 </a></p>
+                </div>
+
+                <button class="accordion">    
+                    Appendices
+                    <i class="accordion-expand fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="panel">
+                    <h2><b>Sitemap</b></h2>
+                    <img src="/report-img/sitemap.jpg" alt="Sitemap for First Time Homebuyer" />
+
+                    <h2>Wireframes (Desktop and Mobile side by side)</h2>
+                    <h3>Home</h3>
+                    <img src="/report-img/home.jpg" alt="Home Wireframe" />
+                    <h3>Blog</h3>
+                    <img src="/report-img/blog.jpg" alt="Blog Wireframe" />
+                    <h3>FAQ</h3>
+                    <img src="/report-img/faq.jpg" alt="FAQ Wireframe" />
+                    <h3>About</h3>
+                    <img src="/report-img/about.jpg" alt="About Wireframe" />
+                    <h3>Calculator</h3>
+                    <img src="/report-img/calculators.jpg" alt="Calculator Wireframe" />
+                </div>
+            </section>
+        </div>
+    </body>
+    <script>
+        // This will fire after the layout-initialized event is triggered above, ensuring all elements from the template are loaded
+        window.addEventListener('load', () => {
+            // An array of accordion elements, containing the FAQ questions
+            var acc = document.getElementsByClassName("accordion");
+
+            // Loop through all the questions
+            for (let i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                    /* Toggle between adding and removing the "active" class,
+                    to highlight the button that controls the panel */
+                    this.classList.toggle("active");
+
+                    /* Toggle between hiding and showing the active panel */
+                    let panel = this.nextElementSibling;
+                    if (panel.style.display === "block") 
+                        panel.style.display = "none";
+                    else 
+                        panel.style.display = "block";
+                });
+            }
+        });
+    </script>
+</html>

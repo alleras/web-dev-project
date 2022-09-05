@@ -1,0 +1,43 @@
+<!-- Header partial, this way header content is not repeated in code -->
+{{>header}}
+
+<!-- Section containing the header of the page, this header class can be reused accross pages -->
+<section class="content-header">
+    <!-- Standard inner-container div, to make the content be centered and have a fixed width -->
+    <div class="inner-container">
+        <h1>Real Estate Calculators</h1>
+    </div>
+</section>
+
+<!-- Main section of the site, a place to list all of the calculators (currently one) -->
+<main id="all-calculators">
+    <!-- Standard inner-container div, to make the content be centered and have a fixed width -->
+    <div class="inner-container">
+        <h2 class="heading">Mortgage Calculator</h2>
+        <p>Use this calculator to determine how much money you will be spending monthly with a proposed house value and down-payment. This calculator does not include PMI payments.</p>
+        <!-- A specific calculator -->
+        <section class="calculator" id="mortgage-calc">
+            <!-- Form to define the data input zone for this calculator-->
+            <form id="mortgage-inputarea">
+                <!-- Labels and input boxes for each of the required fields -->
+                <label for="mortgage-homePrice">Home Price: </label>
+                <input id="mortgage-homePrice" type="number" value="280000" />
+                <label for="mortgage-down">Down Payment: </label>
+                <input id="mortgage-down" type="number" min="0" value="30000" />
+                <label for="mortgage-term">Loan Term (in years): </label> 
+                <input id="mortgage-term" type="number" min="0"value="30" />
+                <label for="mortgage-interest">Interest Rate (%): </label>
+                <input id="mortgage-interest" type="number" min="0" step="0.01" value="5.71" />
+                <!-- Submit button. The script in /js/calculators.js defines an OnClick event for this button-->
+                <button type="button" class="cta-button" id="mortgage-submitBtn">Calculate</button>
+            </form>
+            <!-- Result section of the calculator, where the desired data is displayed -->
+            <div id="mortgage-result" class="calculator-result">
+                <h1>Your monthly payment is: <span id="mortgage-result-amount" class="calculator-result-amount">$0</span></h1>
+                <p>This is based upon your income, monthly expenses and an interest rate of <b><span id="mortgage-result-interest">5.71%</span></b></p>
+            </div>
+        </section>
+    </div>
+</main>
+<!-- Footer partial, this way header content is not repeated in code -->
+{{>footer}}

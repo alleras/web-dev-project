@@ -1,0 +1,93 @@
+<!-- Header partial, this way header content is not repeated in code -->
+{{>header}}
+<!-- Section containing the header of the page, this header class can be reused accross pages -->
+<section class="content-header">
+    <!-- Inner container element used to center and constraint the content to a width -->
+    <div class="inner-container">
+        <h1>Who are we?</h1>
+        <!-- A CSS Grid section with up to four images shown as a collage -->
+        <section id="collage-grid">
+            <!-- A collage-item element containing the image and its description -->
+            <div class="collage-item first">
+                <img src="/img/collage1.jpg" alt="Toy house and a set of keys next to it" class="collage-img" />
+                <!-- This overlay class has a hover property which will make it appear when hovered over using the opacity CSS property -->
+                <section class="collage-item-overlay">
+                    <h3>Meet Your Goals</h3>
+                    <p>Our mission is to help you achieve this milestone in your life, and have the security you deserve.</p>
+                </section>
+            </div>
+            <!-- A collage-item element containing the image and its description -->
+            <div class="collage-item second">
+                <img src="/img/collage2.jpg" alt="Aerial view of city streets, from the top." class="collage-img" />
+                <!-- This overlay class has a hover property which will make it appear when hovered over using the opacity CSS property -->
+                <section class="collage-item-overlay">
+                    <h3>In All Major Towns</h3>
+                    <p>We have a nationwide reach with over 10 years of experience.</p>
+                </section>
+            </div>
+            <!-- A collage-item element containing the image and its description -->
+            <div class="collage-item third">
+                <img src="/img/collage3.jpg" alt="A group of people sitting in a table working on laptops and interacting with each other." class="collage-img" />
+                <!-- This overlay class has a hover property which will make it appear when hovered over using the opacity CSS property -->
+                <section class="collage-item-overlay">
+                    <h3>Backed by a Talented Team</h3>
+                    <p>Our consultant group of Realtors, Software Developers, Buyers and Financial advisors are always here to ensure your path is clear to greatness.</p>
+                </section>
+            </div>
+            <!-- A collage-item element containing the image and its description -->
+            <div class="collage-item fourth">
+                <img src="/img/collage4.jpg" alt="Person signing documents with a pen." class="collage-img" />
+                <!-- This overlay class has a hover property which will make it appear when hovered over using the opacity CSS property -->
+                <section class="collage-item-overlay">
+                    <h3>Legal, Accredited Help</h3>
+                    <p>Our advisors and realtors have all the required credentials so that you can feel safe in the advice you're getting.</p>
+                </section>
+            </div>
+        </section>
+    </div>
+</section>
+<!-- Inner container element used to center and constraint the content to a width -->
+<div class="inner-container">
+    <!-- Main content of the page -->
+    <main id="about-us">
+        <!-- This 'About Us' section is divided into different sections which a heading and some text -->
+        <!-- About us section -->
+        <section class="about-us-section">
+            <h2>Our <span style="color:var(--brand-color)">Story</span></h2>
+            <p>Funded in 2012, we are a non profit organization that aims to educate and facilitate resources to our community, in a way that will make them build the generational wealth that is much needed these days. We started as a group of realtors and homeowners grown closer after the 2008 Housing Market Crash, which consequences became a big motivator of our mission today.</p>
+        </section>
+        <!-- About us section -->
+        <section class="about-us-section">
+            <h2>Where <span style="color:var(--brand-color)">We</span> Are Headed</h2>
+            <p>As we continue to grow we face the challenges of making this task massive and broad-scaled. In the next 5 years we plan to expand to the West Coast and Midwest, we plan to add at least 50 more direct employees and partner with over 250 realtors and local organizations. We vow to maintain the same quality, accessible service that is, today, of much help to minority communities and disadvantaged aspiring homeowners.</p>
+        </section>
+    </main>
+    <!-- Contact us form, containing some inputs to send an email to the WebSite's support email -->
+    <section id="contact-us">
+        <h1 style="text-align: center">Contact Us</h1>
+        <!-- Form area for the Contact Us section -->
+        <form class="contact-us-form">
+            <h3>Need more help? Get in touch.</h3>
+            <!-- A division to show the inputs in a nice layout -->
+            <div class="contact-us-form-division">
+                <input type="text" placeholder="First Name" required> <!-- Required input box -->
+                <input type="text" placeholder="Last Name">
+            </div>
+            <!-- A division to show the inputs in a nice layout -->
+            <div class="contact-us-form-division">
+                <input type="email" placeholder="Email" required> <!-- Required input box -->
+                <input type="tel" placeholder="Phone Number">
+            </div>
+            <!-- Placeholder for the message to be submitted by the user -->
+            <textarea rows="4" placeholder="Type your message here!"></textarea>
+            <!-- Submit button -->
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+</div>
+<!-- A container div for the embedded Google Maps in the site, this is using an iframe to show the map -->
+<div id="map-inject" style="height: 600px">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d214586.6800088805!2d-80.11056065804725!3d32.82096739925933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fe7a42dca82477%3A0x35faf7e0aee1ec6b!2sCharleston%2C%20SC!5e0!3m2!1sen!2sus!4v1662245382902!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<!-- Footer partial, this way header content is not repeated in code -->
+{{>footer}}

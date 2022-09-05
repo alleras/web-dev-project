@@ -1,23 +1,29 @@
 <!-- NOTE: This is a common component of all sites, so styles are contained in the generally-scoped /style/style.css -->
+<!-- Footer section, only one in any page, so I'm using the ID property instead of class -->
 <footer id="footer">
+    <!-- Inner container element used to center and constraint the content to a width -->
+    <!-- In addition to that, a footer-rows class will make each footer-box responsive and organized neatly -->
     <div class="inner-container footer-rows">
+        <!-- A section of the footer with links/information -->
         <div class="footer-box">
             <h2>Follow Us</h2>
             <div class="footer-box-social">
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></i></a>
+                <a href="#" aria-label="Facebook Link"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter Link"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram Link"><i class="fa-brands fa-instagram"></i></i></a>
             </div>
         </div>
+        <!-- A section of the footer with links/information -->
         <div class="footer-box">
             <h2>Reference Links</h2>
             <div class="footer-box-links">
                 <a href="blogPosts.html">Blog</a>
-                <a href="calculator.html">Homebuyer Calculators</a>
+                <a href="calculator.html">Homebuyer Calculator</a>
                 <a href="about.html">About Us</a>
                 <a href="#">Terms and Conditions</i></a>
             </div>
         </div>
+        <!-- A section of the footer with links/information -->
         <div class="footer-box">
             <h2>Contact</h2>
             <div class="footer-box-address">
@@ -29,3 +35,8 @@
         </div>
     </div>
 </footer>
+<!-- Floating element that will appear when the site is scrolled down, to automatically scroll back to the top-->
+<!-- The go-up-button element has an OnClick event created by goUpButton.js -->
+<span id="go-up-button">
+    <i class="fa fa-chevron-up" aria-hidden="true"></i>
+</span>

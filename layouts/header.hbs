@@ -1,38 +1,63 @@
+<!-- Header section -->
 <header id="header-nav">
+    <!-- Inner container element used to center and constraint the content to a width -->
     <div class="inner-container">
+        <!-- Another container element for the navbar, to organize the Logo, links and other things/apply spacing/etc -->
         <div class="nav-innerContainer">
+            <!-- Logo of the site -->
             <div class="nav-logo">
+                <!-- Logo always redirects to the index site -->
                 <a href="index.html">
                     <img src="img/logo.png" alt="First Time Homebuyer - Home"
                         width="160" height="65" id="logo-img" />
                 </a>
             </div>   
-
+            <!-- The navigation section of the site, containing links -->
             <nav>
+                <!-- Using a ul tag to list each link -->
                 <ul class="nav-group">
+                    <!-- A menu item element -->
                     <li class="nav-menuItem">
                         <a class="nav-menuItem-link" href="index.html">Home</a>
                     </li>
+                    <!-- A menu item element -->
                     <li class="nav-menuItem">
                         <a class="nav-menuItem-link" href="blogPosts.html">Blog</a>
                     </li>
+                    <!-- A menu item element -->
                     <li class="nav-menuItem">
                         <a class="nav-menuItem-link" href="FAQ.html">FAQ</a>
                     </li>
+                    <!-- A menu item element -->
                     <li class="nav-menuItem">
                         <a class="nav-menuItem-link" href="about.html">About</a>
                     </li>
+                    <!-- A menu item element -->
                     <li class="nav-menuItem">
-                        <a class="nav-cta-link" href="calculator.html">Calculators</a>
+                        <!-- Call to action link for the navigation, should be right-most element -->
+                        <a class="nav-cta-link" href="calculator.html">Calculator</a>
                     </li>
                 </ul>
-
+                <!-- Hamburger toggle that appears when the site is too small to fit the menu -->
                 <div class="nav-hamburger">
+                    <!--Just three horizontal bars -->
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </div>
             </nav>
+            <!-- Floating element containing all the accesibility options. Several OnClick events are defined for the menu itself and the options -->
+            <div id="floating-accessibility">
+                <i class="fa-solid fa-wheelchair"></i>
+                <div id="accessibility-options">
+                    <ul id="accessibility-options-list">
+                        <!-- Underline links will active the text-decoration: underline property of the <a> tags -->
+                        <li id="accessibility-option__underline">Underline Links</li>
+                        <!-- Big fonts will increase the <body> base font-weight property, which cascades down to most fonts in the site -->
+                        <li id="accessibility-option__bigFonts">Big Fonts</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </header>

@@ -1,125 +1,161 @@
-/* Featured post styling */
+/* -- Featured post styling --- */
 /* These are all IDs as they should only appear once on the page */
 
+/* Variables only for sites using this css stylesheet */
+#body{
+    --blog-post-title-color: #474e57;
+    --side-panel-text-color: #8e8e8e; 
+}
+/* Spacing modifications for the main-content id */
 #main-content{
     margin-top: 0;
 }
+/* A section showing a post that will be highlighted */
 #featured-post{
     background-color: var(--featured-section-bg);
     border-radius: 15px;
     margin-bottom: 45px;
     padding: 20px 0;
 }
+/* "Featured Post" heading */
 #featured-post-heading h1 {
     margin-top: 0;
 }
+/* Image container of the featured post */
 #featured-post-image-container {
-    position: relative;
+    position: static;
 }
+/* Image in the featured post */
 #featured-post-image-container img {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
+    width: 100%; /* Make sure it only occupies the width of the parent */
+    object-fit: cover;  /* Fit the image to the width */
+    border-radius: 10px; /* Round the corners */
 }
+/* Information box showing relevant data for the post */
 #featured-post-infobox {
-    display: none;
+    display: none; /* MOBILE ONLY: Not displayed  */
 }
 @media (min-width: 440px) {
     #featured-post-infobox {
-        display: block;
+        display: block; /* Display on bigger screens */
     }   
 }
+/* H2 headers spacing adjustments */
 #featured-post-title h2 {
     margin-block-end: .2em;
 }
+/* Space adjustments for the text of the post */
 #featured-post-text{
     margin-top:10px;
 }
 
-/* Shared between Featured and Individual Posts */
+/* --- Shared between Featured and Individual Posts --- */
+/* Informational section of the post */
 .post-infobox {
    font-size: .78rem; 
    color: rgb(131, 131, 131);
+   margin-bottom: 5px;
 }
+/* The icons for each infobox item */
 .post-infobox i{
     color: rgb(145, 145, 145);
     margin-right: 5px;
     font-size: .6rem;
 }
+/* Each informational item in the infobox */
 .post-infobox-item{
-    display: inline-block;
+    display: inline-block; /* Display the next to each other */
     margin-right: 5px;
 }
+/* Category is shown on a separate line */
 .post-infobox-category {
     display: block;
     margin-bottom: 5px;
 }
+/* Information about the actor */
 .post-infobox-about{
-    display: none;
+    display: none; /* MOBILE ONLY: Not displayed */
 }
 @media (min-width: 750px) {
     .post-infobox-about{
-        display: block;
+        display: block; /* Display on bigger screens */
     }
 }
+/* The text of the post */
 .description-paragraph p {
+    /* MOBILE ONLY: Make text smaller/adjusted for smaller screens */
     font-size: .85rem;
     text-align: justify;
     margin: 0 0 10px 0;
 }
 @media (min-width: 750px) {
     .description-paragraph p {
-        font-size: revert;
+        font-size: revert; /* Original text on bigger screens */
     }
 }
-/* Individual post styling */
+/* --- Individual post styling --- */
 
+/* Each post container */
 .post {
     display: flex;
     margin-bottom: 2.5rem;
     transition: all .15s ease;
+    border-radius: 5px;
+    overflow: hidden;
 }
+/* Show shadow on hover of a post */
 .post:hover{
     box-shadow: 0px 1px 15px rgba(0,0,0,.1);
 }
 @media (min-width: 980px){
     .post{
-        padding-right: .5em;
+        padding-right: .5em; /* Pad the right since we have the side-panel showing */
     }
 }
+/* Image container of the post */
 .post-img {
     flex-grow: 0;
     flex-shrink: 0;
-    flex-basis: 35%;
+    flex-basis: 35%; /* This will always occupy 35 percent of the parent div's width, no growing or shrinking  */
 }
+/* Image formatting for the post */
 .post-img img {
     height: 100%;
     width: 100%;
 }
+/* Content of the post (text) */
 .post-content{
     margin-left: 1rem;
     flex: 1;
 }
+@media (min-width: 550px){
+    .post-content{
+        padding: 10px 0; /* Pad top and bottom on bigger screens */
+    }
+}
+/* Title of the post */
 .post-title h2 {
     margin-top: 0;
     margin-bottom: 0px;
-    font-size: 1rem;
+    font-size: .9rem;
 }
+/* Link styling for the title */
 .post-title h2 a {
-    color: #474e57;
+    color: var(--blog-post-title-color);
 }
 .post-title h2 a:hover {
     color: var(--brand-color);
 }
+/* Description of the post */
 .post-description{
-    display: none;
+    display: none; /* MOBILE ONLY: Not displayed */
 }
 @media (min-width: 440px) {
     .post-title h2 {
-        font-size: 1rem;
+        font-size: 1rem; /* Adjust the size to normal */
     }
     .post-description {
-        display: block;
+        display: block; /* Show on bigger screens */
     }
 }
 @media (min-width: 550px) {
@@ -127,70 +163,71 @@
         font-size: revert;
     }
     .post-img{
-        flex-basis: 25%;
+        flex-basis: 25%; /* After 550px of width, we can afford to occupy less space with the image (since it won't be too small) */
     }
 }
-
-.post-img img{
-    width: 100%;
-    object-fit: cover;
-}
-
+/* The grid of the blog posts and the side panel */
 #blog-grid{
     display: grid;
     grid-gap: 1em;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* MOBILE ONLY: Stack blog posts and panels  */
 }
+/* Section for the blog posts */
 #blog-posts{
     padding-top: .5em;
 }
+/* Side panel section */
 #blog-grid-side{
     display: block;
 }
 @media (min-width: 980px) {
-    #blog-grid-side{
-        display: block;
-    }
     #blog-grid {
-        grid-template-columns: 3fr 1fr;
+        grid-template-columns: 3fr 1fr; /* Make the blogs occupy 3/4 of the width, and the side panel 1/4 */
     }
 }
+/* A side panel */
 .blog-grid-side-panel{
-    background-color: #f9f9f9;
+    background-color: var(--gray-bg);
     padding: 1em;
     margin-bottom: 1em;
     border-radius: 5px;
     font-size: .9rem;
 }
+/* Heading of the side panel */
 .blog-grid-side-panel h3 {
     color: black;
     margin-top: 0px;
     text-align: center;
 }
+/* Each "news" element in the side panel */
+.side-panel-element {
+    text-align: justify;
+    color: var(--side-panel-text-color);
+    font-size: .8em;
+}
+/* Show a bullet before each of them */
 .side-panel-element::before {
-    color: #8e8e8e;
+    color: var(--side-panel-text-color);
     content: "• ";
     font-size: 1.5em;
 }
-.side-panel-element {
-    text-align: justify;
-    color: #8e8e8e;
-    font-size: .8em;
-}
+/* News element linking */
 .side-panel-element a{
-    color: #8e8e8e;
+    color: var(--side-panel-text-color);
 }
 .side-panel-element a:hover{
-    color: var(--brand-color);
+    color: var(--main-link-hover-color);
 }
+/* Read more button at the bottom */
 #blog-posts-seemore {
     margin-bottom: 1rem;
     text-align: center;
 }
+/* Link styling for the read more button */
 #blog-posts-seemore a {
     display: inline-block;
     color: #FFF;
-    background-color: var(--brand-color);
+    background-color: var(--main-link-hover-color);
     padding: 10px 15px;
     border-radius: 999px;
     font-size: .9em;

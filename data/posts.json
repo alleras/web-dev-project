@@ -6,12 +6,12 @@
         "author": "Agustin Lleras",
         "dateCreated": "April 23rd, 2022",
         "category": "Home Improvement",
-        "content": "GM Ian Nepomniachtchi began game eight in the **2021 FIDE World Championship** with a beautifully crafted defense against a Petroff opening. He faltered in the end game stage of the match after blundering a pawn and having his position collapse thereafter. Carlsen extends his lead 5-3 over his challenger."
+        "content": "With the help of our sponsor, **Furnitures R Us**, we take you through the process of turning a simple space into a cozy ambient where the family can hang out. This weekly special shows all the tips and trips to keep it simple, but end up with wonderful results. All within a budget!"
     },
     "posts": [
         {
             "title": "How To Budget For Your New Home",
-            "imgPath": "./img/article1.webp",
+            "imgPath": "./img/article1.jpg",
             "imgDescription": "Decorate your living room",
             "author": "Rafael Lleras",
             "dateCreated": "August 1st, 2022",
@@ -20,7 +20,7 @@
         },
         {
             "title": "4 Best States for New Buyers",
-            "imgPath": "./img/article2.webp",
+            "imgPath": "./img/article2.jpg",
             "imgDescription": "Decorate your living room",
             "author": "Agustin Lleras",
             "dateCreated": "May 23rd, 2022",
@@ -29,16 +29,16 @@
         },
         {
             "title": "What's the Real Cost of a Home Purchase?",
-            "imgPath": "./img/article3.webp",
+            "imgPath": "./img/article3.jpg",
             "imgDescription": "Decorate your living room",
             "author": "Christina Jacobs",
             "dateCreated": "April 2nd, 2022",
             "category": "Home Planning",
-            "content": "We take you through the process of turning a space into an ambient. Follow our tips this weekly special!"
+            "content": "Purchasing a home is not only the down-payment and the mortgage. Banks, real estate agents, documents cost money too."
         },
         {
             "title": "5 Things to Avoid When Closing",
-            "imgPath": "./img/article3.webp",
+            "imgPath": "./img/article4.jpg",
             "imgDescription": "Decorate your living room",
             "author": "Maritza Sandrea",
             "dateCreated": "February 14th, 2022",
@@ -47,7 +47,7 @@
         },
         {
             "title": "Rent or Purchase? 2022's Dilemma",
-            "imgPath": "./img/article3.webp",
+            "imgPath": "./img/article5.webp",
             "imgDescription": "Decorate your living room",
             "author": "Agustin Lleras",
             "dateCreated": "January 2nd, 2022",

@@ -1,0 +1,62 @@
+/* Heading for the calculators */
+#all-calculators .heading {
+    color: var(--main-link-hover-color);
+}
+/* An input element of any calculator */
+.calculator input {
+    box-sizing: border-box;
+    padding: .6rem 1rem;
+    width: 100%;
+    border: 1px solid var(--gray-border);
+    font-size: 0.9em;
+    resize: none;
+    outline-width: 0; /* No regular outline */
+    border-radius: 5px;
+    margin-bottom: 1em;
+}
+/* A focused input element */
+.calculator input:focus { 
+    background-color: var(--gray-bg); /* A gray background makes it clear that this is focused */
+}
+/* Do not display the arrows on the numeric editors */
+.calculator input::-webkit-outer-spin-button,
+.calculator input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Styling for the label of each input */
+.calculator label{
+    font-weight: bold;
+    font-size: .9rem;
+}
+/* A calculator section */
+.calculator{
+    display: grid; /* Make the layout of the calculator a grid for better spacing */
+    grid-template-columns: 1fr; /* MOBILE ONLY: Elements take the entire width */
+    grid-gap: 0; 
+    margin-bottom: 1.5em;
+}
+/* The result section of a calculator */
+.calculator-result{
+    display: flex;
+    flex-direction: column; /* Stack elements on top of each other */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally  */
+    text-align: center;
+    margin-top: 2em;
+}
+/* Bigger screens */
+@media (min-width: 650px){
+    .calculator{
+        grid-template-columns: 1fr 3fr; /* Make the input section take 1/3rd of the width, and the results the rest */
+        grid-gap: 2em; /* Some spacing between the sections */
+    }
+    /* No margin-top on bigger screens */
+    .calculator-result{
+        margin-top: revert;
+    }
+}
+/* Emphasis for certain text */
+.calculator-result-amount{
+    color: var(--brand-color);
+}

@@ -1,6 +1,7 @@
+<!-- Header partial, this way header content is not repeated in code -->
 {{>header}}
 
-<!-- Just a section identifier for the carousel -->
+<!-- Just a section identifier for the carousel. Only one main-carousel element is expected, so ID is used instead of class -->
 <section id="main-carousel">
     <!-- Standard inner-container div, to make the content be centered and have a fixed width -->
     <div class="inner-container">
@@ -19,6 +20,7 @@
                 {{#each carouselSlides}}
                     <!-- Individual slides -->
                     <li class="slide" style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url('{{path}}');">
+                        <!-- The slide description, laid on top of the image -->
                         <div class="slide-description">
                             <h1><a href="blogPosts.html">{{title}}</a></h1>
                             <h3>{{subTitle}}</h3>
@@ -34,52 +36,58 @@
 <main class="main-content">
     <!-- Standard inner-container div, to make the content be centered and have a fixed width -->
     <div class="inner-container">
-        <div class="greet-box">
+        <!-- A section containing a quick introductory text for the site-->
+        <section class="greet-box">
             <h4>Take the first step.</h4>
             <h4 class="emphasis-header">Remove all the worry.</h4>
             <p class="center" style="max-width:500px">
                 A source of information made by experienced realtors and buyers alike, to take the gloom out of buying your first home.
             </p>
-        </div>
-        <div class="cards-row">
+        </section>
+        <!-- A section containing promotional images and text, used to further detail the site -->
+        <section class="cards-row">
+            <!-- An individual card element -->
             <div class="card">
                 <div class="card-image">
-                    <img src="/img/sample.webp" alt="sample!"/>
+                    <img src="/img/promotional1.jpg" alt="Big house in a verdant environment."/>
                 </div>
                 <div class="card-header">
-                    <h4>Get all the information you need</h4>
+                    <h4>Achieve Your Dream Home</h4>
+                </div>
+                <div class="card-description">
+                    <p>We aim to make your home buying process quick and easy, with the best guidance.</p>
+                </div>
+            </div>
+            <!-- An individual card element -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="/img/promotional2.jpg" alt="Women sitting in a couch sharing information on their laptops."/>
+                </div>
+                <div class="card-header">
+                    <h4>Get Accurate Information</h4>
                 </div>
                 <div class="card-description">
                     <p>Our blog provides an updated, reliable and accessible source of information.</p>
                 </div>
             </div>
+            <!-- An individual card element -->
             <div class="card">
                 <div class="card-image">
-                    <img src="/img/sample.webp" alt="sample!"/>
+                    <img src="/img/promotional3.jpg" alt="A group of people bunched up in an office environment."/>
                 </div>
                 <div class="card-header">
-                    <h4>Get all the information you need</h4>
+                    <h4>Feel Confident With Our Team</h4>
                 </div>
                 <div class="card-description">
-                    <p>Our blog provides an updated, reliable and accessible source of information.</p>
+                    <p>We have extensive knowledge of the industry, and we are here to back you.</p>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="/img/sample.webp" alt="sample!"/>
-                </div>
-                <div class="card-header">
-                    <h4>Get all the information you need</h4>
-                </div>
-                <div class="card-description">
-                    <p>Our blog provides an updated, reliable and accessible source of information.</p>
-                </div>
-            </div>
-        </div>
+        </section>
     </div>
 </main>
-
+<!-- A section with more accomplishments for the site -->
 <section id="sales-metrics">
+    <!-- Inner container element used to center and constraint the content to a width -->
     <div class="inner-container">
         <h1>2387+</h1>
         <h5>New buyers in their dream home</h5>
@@ -87,5 +95,5 @@
         <a href="blogPosts.html" id="sales-metrics-cta">Start your journey</a>
     </div>
 </section>
-
+<!-- Footer partial, this way header content is not repeated in code -->
 {{>footer}}

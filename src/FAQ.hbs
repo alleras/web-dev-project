@@ -1,0 +1,69 @@
+<!-- Header partial, this way header content is not repeated in code -->
+{{>header}}
+<!-- Section containing the header of the page, this header class can be reused accross pages -->
+<section class="content-header">
+    <!-- Inner container element used to center and constraint the content to a width -->
+    <div class="inner-container">
+        <h1>
+            Frequently Asked Questions
+        </h1>
+        <img src="/img/faq-banner.jpg" alt="Dog raising paw to ask a question" />
+    </div>
+</section>
+
+<!-- Main content of the page -->
+<main class="main-content">
+    <!-- Inner container element used to center and constraint the content to a width -->
+    <div class="inner-container">
+        <!-- Introductory text for FAQ -->
+        <p><b>Have questions? We can help.</b> Our database of frequently asked questions can be your first resource to help you embark on your journey, and if not, send us an email!</p>
+
+        <!-- Section containing the FAQ Accordion -->
+        <section id="faq-section">
+            <!-- Accordion element, it can be expanded or contracted -->
+            <button class="accordion">    
+                Why do you provide these resources for free?
+                <i class="accordion-expand fa-solid fa-chevron-down"></i>
+            </button>
+            <!-- Panel element containing the answer to the FAQ -->
+            <div class="panel">
+                <p>We believe that the fundamental help that new homeowners require should be free of charge! So we provide these service and complement our income with other options aimed to improve your experience even further.</p>
+            </div>
+            <!-- Accordion element, it can be expanded or contracted -->
+            <button class="accordion">    
+                Where are you located?
+                <i class="accordion-expand fa-solid fa-chevron-down"></i>
+            </button>
+            <!-- Panel element containing the answer to the FAQ -->
+            <div class="panel">
+                <p>We are headquartered in Charleston, SC, in the United States. We currently have partners all across the East Coast, and we are opening a new branch in Denver, CO.</p>
+            </div>  
+            <!-- Accordion element, it can be expanded or contracted -->
+            <button class="accordion">    
+                Do you sell products? Is your business for profit?
+                <i class="accordion-expand fa-solid fa-chevron-down"></i>
+            </button>
+            <!-- Panel element containing the answer to the FAQ -->
+            <div class="panel">
+                <p>We do! Our business is a <b>501(c)(3)</b> tax-exempt, so we are not strictly for profit. All revenue gets reinvested into our employees (who make your experience great) and into programs designed to bridge the gap between wealthy and less fortunate aspiring homeowners.</p>
+            </div>
+            <!-- Accordion element, it can be expanded or contracted -->
+            <button class="accordion">    
+                How can I get specialized assistance?
+                <i class="accordion-expand fa-solid fa-chevron-down"></i>
+            </button>
+            <!-- Panel element containing the answer to the FAQ -->
+            <div class="panel">
+                <p>Why, of course you can! Just reach out to us in the <a href="about.html">Contact Us</a> section with your needs and we will reply within 24 hours.</p>
+            </div>
+        </section>
+
+        <!-- Call to action section driving to the About page, for contacting the company -->
+        <section id="contact-us-cta">
+            <h2>Have more questions?</h2>
+            <a href="about.html#contact-us" class="cta-button">Contact Us</a>
+        </section>
+    </div>
+</main>
+<!-- Footer partial, this way header content is not repeated in code -->
+{{>footer}}

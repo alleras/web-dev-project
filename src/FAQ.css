@@ -1,0 +1,70 @@
+/* A section for the frequently asked questions */
+#faq-section{
+    --faq-border-color: var(--gray-border);
+    margin-bottom: 2em;
+}
+/* --- ACCORDION STYLE FAQ Section --- */
+/* The accordion idea was taken from here: https://www.w3schools.com/howto/howto_js_accordion.asp */
+/* It was modified heavily by me to fit the site's style and desired functionality */
+/* An expand icon was added, general styling was changed and animations were added */
+
+/* An "accordion" element, that can be expanded or contracted, containing the question */
+.accordion {
+  background-color: var(--page-heading-bg-color);
+  font-weight: bold;
+  color: rgb(90, 90, 90);
+  cursor: pointer; /* Change cursor on hover */
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  transition: 0.4s; /* For the hover animation */
+  outline: none;
+  border: 1px solid var(--faq-border-color);
+  border-top: 0;
+}
+/* Hover of the accordion, change the background-color */
+.accordion:hover {
+  background-color: #ccc;
+}
+/* The first accordion */
+.accordion:first-of-type {
+    border-radius: 10px 10px 0 0; /* Make the top accordion rounded at the top */
+    border-top: 1px solid var(--faq-border-color); /* Display the border at the top. Accordion elements do not have a top border by default */
+}
+/* The last accordion */
+.accordion:last-of-type{
+    border-radius: 0 0 10px 10px; /* Make it rounded at the bottom */
+}
+
+.accordion:last-of-type.active {
+    border-radius: 0; /* If the last accordion is active (meaning, the content is showing), do not round it for a cohesive look */
+}
+/* A panel with the content of the answer */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  border: 1px solid var(--faq-border-color);
+  border-top: none;
+  border-bottom: none;
+  transition: 0.4s;
+}
+/* The last panel of the list */
+.panel:last-of-type {
+  border-bottom: 1px solid var(--faq-border-color);
+  border-radius: 0 0 10px 10px; /* Round its borders so it looks cohesive */
+}
+/* The expand button of the accordion */
+i.accordion-expand {
+  float: right;
+  transition: 0.4s; /* To make it animated */
+}
+/* If the accordion is active, style the icon of class accordion-expand */
+.accordion.active i.accordion-expand{
+  transform: rotate(180deg); /* To achieve a rotation animation */
+}
+/* Spacing for the CTA */
+#contact-us-cta {
+    margin-bottom: 2em;
+}

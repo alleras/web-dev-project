@@ -1,18 +1,26 @@
+<!-- Header partial, this way header content is not repeated in code -->
 {{>header}}
-
+<!-- Main content of the page. In this case, the featured post is part of this main content and thus it is inside of it -->
 <main id="main-content">
+    <!-- Using the article tag since this content can be consumed on its own -->
     <article id="featured-post">
+        <!-- Inner container element used to center and constraint the content to a width -->
         <div class="inner-container">
+            <!-- Handlebars helper to get the featuredPost element passed in blogPosts.html -->
             {{#with featuredPost}}
+                <!-- Just a Heading for this section -->
                 <div id="featured-post-heading">
                     <h1>Featured Post</h1>
                 </div>
+                <!-- Big image for the featured post -->
                 <div id="featured-post-image-container">
                     <img src="{{imgPath}}" alt="{{imgDescription}}" />
                 </div>
+                <!-- Post Image -->
                 <div id="featured-post-title">
                     <h2>{{title}}</h2>
                 </div>
+                <!-- Infobox section containing information about the article (author, category, date, etc) -->
                 <div id="featured-post-infobox" class="post-infobox">
                     <div class="post-infobox-item">
                         <i class="fa-solid fa-layer-group"></i>{{category}}
@@ -24,25 +32,33 @@
                         <i class="fa-solid fa-calendar"></i>{{dateCreated}}
                     </div>
                 </div>
+                <!-- The content of the featured post -->
                 <section id="featured-post-text" class="description-paragraph">
                     {{process-markdown content}}
                 </div>
             {{/with}}
         </div>
     </article>
-
+    <!-- Inner container element used to center and constraint the content to a width -->
     <div class="inner-container">
+        <!-- An responsive grid that will show all posts and a side panel. -->
         <div id="blog-grid">
+            <!-- The blogs section, listing all blog posts -->
             <section id="blog-posts">
+                <!-- Handlebars helper to loop through all of the 'posts' object provided in blogPosts.html -->
                 {{#each posts}}
+                    <!-- Article tag used again as each post can be consumed individually (although they don't contain much data) -->
                     <article class="post">
+                        <!-- Post image to the left, reading the image path from the current JSON element in 'posts' -->
                         <div class="post-img">
                             <a href="#blog-posts"><img src="{{imgPath}}" alt="{{imgDescription}}" /></a>
                         </div>
+                        <!-- Post title, reading the image path from the current JSON element in 'posts' -->
                         <section class="post-content">
                             <div class="post-title">
                                 <h2><a href="#blog-posts">{{title}}</a></h1>
                             </div>
+                            <!-- Post infobox, reading the category, author and dateCreated passed to each element of 'posts'-->
                             <div class="post-infobox">
                                 <div class="post-infobox-category">
                                     <div class="post-infobox-item">
@@ -58,17 +74,20 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- The post description section, reading from the content property of 'posts' -->
                             <section class="post-description description-paragraph">
+                                <!-- A custom helper that will convert the content property (in Markdown syntax) into HTML -->
                                 {{process-markdown content}}
                             </section>
                         </section>
                     </article>
                 {{/each}}
-
+                <!-- Read more section for the end of visible posts in this site -->
                 <div id="blog-posts-seemore">
                     <a href="#blog-posts">Read more...</a>
                 </div>
             </section>
+            <!-- Side panel containing small snippets of news relevant to the blog -->
             <section id="blog-grid-side">
                 <div class="blog-grid-side-panel">
                     <h3>Markets in South Carolina</h3>
@@ -90,5 +109,5 @@
         </div>
     </div>
 </main>
-
+<!-- Footer partial, this way header content is not repeated in code -->
 {{>footer}}

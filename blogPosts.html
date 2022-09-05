@@ -1,45 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Character Set Definition for the Website-->
         <meta charset="UTF-8">
+        <!-- Definition of the viewport, in this case we define that the content will be constrained within the width of the screen, at a scale of 1 to 1-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>First Time Homebuyer - Your Resource for a Big Leap</title>
-        
+        <!-- Title for the page -->
+        <title>Blog - First Time Homebuyer</title>
+        <!-- Icon for the Page -->
+        <link rel="icon" href="/img/favicon.ico">
+        <!-- Normalize.css stylesheet taken from the Skeleton CSS project, to help me make the site look more consistent -->
         <link rel="stylesheet" href="style/normalize.css">
+        <!-- General stylesheets that are used throughout all pages -->
         <link rel="stylesheet" href="style/style.css">
         
         <!-- Outside libraries -->
+        <!-- Handlebars -->
         <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-        <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+        <!-- Font-Awesome icons -->
         <script src="https://kit.fontawesome.com/4db9c7db59.js" crossorigin="anonymous"></script>
+        <!-- Showdown.js, used to process Markdown syntax in some of my Handlebars helper functions -->
+        <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
 
         <!-- Util libraries (own) -->
+        <!-- Utility functions (these provide methods for loading the templates) -->
         <script src="js/util.js"></script>
+        <!-- CSS Helpers, which contains JavaScript functionality for certain elements used throughout in the site-->
+        <script src="js/css-helpers.js"></script>
+        <!-- Scroll to top button, used across the site as well -->
+        <script src="js/goUpButton.js"></script>
+        <!-- Blog Posts helper, this contains the method for converting Markdown into HTML -->
         <script src="js/blogPosts.js"></script>
-
+        
         <!-- Page specific CSS -->
         <link rel="stylesheet" href="src/blogPosts.css">
     </head>
 
     <body>
-        <!-- Placeholder, the body will be filled by the template located in /src/pageName.hbs -->
+        <!-- Placeholder, the body will be filled by the template located in /src/blogPosts.hbs -->
     </body>
 
     <script>        
+        // Once the initial site is loaded, this code will be run and the templates will be inserted in the body
         window.addEventListener('load', async (event) => {             
-            // Load the blog posts
+            // Load the blog posts from a JSON file (to separate the data from the layout/html). These are objects containing all the data to display them
             let response = await fetch('./data/posts.json');
+            // Convert the returned text into a JSON object
             let postsJSON = await response.json();
 
+            // A call to a helper function initializing the layout with the content of the page
             // This time, we pass (explicitly) the posts to the layout, so it can be used within
             await initializeLayouts('./src/blogPosts.hbs', postsJSON);
 
-            // An non-standard event for when the entire template is initialized. This allows custom
+            // An custom event for when the entire template is initialized. This allows custom
             // JavaScript included in this file to interact with elements nested inside of the templates.
             const ev = new Event('layout-initialized');
             window.dispatchEvent(ev);
         });
     </script>
-    <script src="js/css-helpers.js"></script>
 </html>

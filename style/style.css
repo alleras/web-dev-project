@@ -1,6 +1,11 @@
 /* CSS Variables */
 
 :root {
+    /* General definitions: colors, borders, etc, that can be used more specifically */
+    --gray-border: #e3e3e3;
+    --gray-bg: #f5f5f5;
+    --dark-gray-bg: #ebebeb;
+    /* Wide use variables */
     --brand-color: #344aa7;
     --brand-color-secondary: #80b1f9;
     --main-link-color: var(--brand-color-secondary);
@@ -10,129 +15,151 @@
     --cta-color-hover: #d88226;
     --section-margin: 30px;
     --featured-section-bg: #f9f9f9;
+    --page-heading-bg-color: var(--gray-bg);
   }
 
-/* General styles */
+/* --- General styles --- */
 html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
-
+/* Set the sites general properties of the page itself */
 body {
-    margin: 0;
-    box-sizing: border-box;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    color: rgb(54, 54, 54);
+    margin: 0; /* Content should occupy entire viewport */
+    color: rgb(54, 54, 54); /* Text color */
 }
-
+/* General link styling */
 a {
-    text-decoration: none;
-    color: var(--main-link-color);
-    transition: all .15s ease;
+    text-decoration: none; /* No underlines by default */
+    color: var(--main-link-color); 
+    transition: all .15s ease; /* To add an animation on hover */
 }
-
+/* Hover link styling */
 a:hover{
     color: var(--main-link-hover-color); 
 }
-
+/* General heading elements definitions */
 h4, .h4, h5, .h5, h6, .h6 {
-    margin-top: 10px;
+    /* Make smaller headings have less clearance */
+    margin-top: 10px; 
     margin-bottom: 10px;
 }
-
+/* Specific h4 styling to make it smaller */
 h4 {
     font-size: 1.3rem;
     line-height: 1.45;
 }
-
-.emphasis-header {
-    color: var(--brand-color);
-}
-
-.center{
-    margin-left: auto;
-    margin-right: auto;
-}
-
+/* Paragraph styling (make text a little less condensed) */
 p {
     line-height: 1.3rem;
 }
 
-/* Utility classes */
+/* --- Utility classes --- */
 
+/* Inner container class used to center a div and fix it to a maximum width */
 .inner-container{
-    display: block;
-    max-width: 980px;
+    display: block; /* Make sure it doens't share space with other elements in a single line */
+    max-width: 980px; /* Max width for all my content */
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 20px; /* Padding for when the content is right up against the screen edges */
 }
-
-/* EXCEPTION HERE: Larger than max-width of inner-container */
+/* An emphasized header, generally used for highlighting/marketing */
+.emphasis-header {
+    color: var(--brand-color);
+}
+/* Utility class to horizontally center elements within a div */
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Make sure that images within inner-container don't overflow */
+.inner-container img {
+    max-width: 100%;
+}
+/* Larger than width of inner-container */
 @media (min-width: 980px) {
     .inner-container{
         padding: 0;
     }
 }
+/* A general purpose call-to-action button */
+.cta-button {
+    display: inline-block; /* Can be displayed in the same line as other elements */
+    box-sizing: border-box; /* Don't let padding change its size */
+    background-color: var(--cta-color); 
+    color: white;
+    border-radius: 5px; /* Rounded */
+    transition: .2s; /* Animation for hover */
+    padding: 15px 10px;
+    border: none;
+}
+/* CTA Hover styling */
+.cta-button:hover{
+    background-color: var(--cta-color-hover);
+    color: white;
+}
 
-/* Header */
+/* --- Header --- */
 
+/* The main navigation section */
 #header-nav{
-    height: 80px;
+    height: 80px; /* Fixed height for all viewport sizes */
     background-color: var(--content-header-bg);
     padding: 0 10px;
 }
-
-#header-nav .nav-logo{
-    padding: 7px 0;
-}
-
+/* The actual content of the navigation */
 .nav-innerContainer{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex; /* Display as flex so that it scales nicely */
+    align-items: center; /* Center vertically */
+    justify-content: space-between; /* Leave space between logo and menu elements */
+}
+/* Adjustments of spacing for the logo */
+.nav-innerContainer .nav-logo{
+    padding: 7px 0;
 }
 .nav-logo{
     display: inline-block;
 }
-
+/* The navigation group element for mobile (hamburger menu) */
 .nav-group {
-    z-index: 9999;
-    list-style-type: none;
+    z-index: 9999; /* MOBILE ONLY: Show on top of everything else */
+    list-style-type: none; /* Don't show list bullets */
     padding: 0;
     margin: 10px 0 10px 0;
     display: flex;
-    position: fixed;
-    left: 100%;
+    position: fixed; /* MOBILE ONLY: Display right below the nav bar */
+    left: 100%; /* MOBILE ONLY: Display outside of the view by default */
     top: 70px;
-    gap: 0;
-    flex-direction: column;
+    gap: 0; 
+    flex-direction: column; /* MOBILE ONLY: So elements stack up */
     background-color: var(--content-header-bg);
     width: 100%;
     text-align: center;
     transition: 0.3s;
 }
-
+/* Move into view when the element is active */
 .nav-group.active{
     left: 0;
 }
-
+/* Hamburger button */
 .nav-hamburger{
     display: block;
     cursor: pointer;
 }
-
+/* Each item of the nav menu */
 .nav-menuItem{
     margin: 20px 10px;
 }
+/* Link in the nav menu */
 .nav-menuItem-link{
     color: #FFF;
 }
+/* Hover link */
 .nav-menuItem-link:hover{
     color: var(--main-link-color);
 }
-
+/* Call to action link for the navbar */
 .nav-cta-link{
     color: #FFF;
     background-color: var(--cta-color);
@@ -142,26 +169,27 @@ p {
 .nav-cta-link:hover{
     color: #FFF;
     background-color: var(--cta-color-hover);
-    box-shadow: 3px 2px 5px rgb(0 0 0 / 15%);
+    box-shadow: 3px 2px 5px rgb(0 0 0 / 15%); /* Show a nice shadow on hover */
 }
-
-/* Larger than phablet */
+/* Style for when the menu fits in the nav bar */
 @media (min-width: 750px) {
+    /* Do not display the hamburger button */
     .nav-hamburger{
         display: none;
     }
-
+    /* The menu will be shown now */
     .nav-group {    
-        position: static;
+        position: static; /* So that it displays normally */
         width: auto;
         text-align: left;
-        flex-direction: row;
+        flex-direction: row; /* Stack elements on a horizontal basis */
     }
+    /* Spacing adjustment for bigger screens */
     .nav-menuItem{
         margin: 0 10px;
     }
 }
-
+/* Individual bars of the hamburger menu */
 .bar{
     display: block;
     width: 25px;
@@ -171,93 +199,186 @@ p {
     background-color: #FFF;
 }
 
-/* Footer */
+/* --- Floating elements --- */
 
+/* Scroll to Top button only displayed if on bigger screens */
+@media (min-width: 980px) {
+    #go-up-button {
+        color: var(--brand-color);
+        cursor: pointer; /*  Change cursor when hovering */
+        height: 4rem;
+        width: 4rem;
+        line-height: 4rem;
+        background: white;
+        border-radius: 50%;
+        box-shadow: rgba(0,0,0,0.2) 2px 5px 10px;
+        position: fixed; /* Make it stay in the same position in the screen regardless of scroll */
+        bottom: 2rem;
+        right: 2rem;
+        z-index: 99; /* Show on top of most things */
+        text-align:center;
+        font-size:3rem;
+    }
+}
+/* On smaller screens we do not show it */
+#go-up-button {
+    display:none;
+}
+/* Always shown on smaller and bigger screens */
+#floating-accessibility {
+    color: var(--brand-color);
+    cursor: pointer; /* Change cursor when hovering */
+    height: 3rem;
+    width: 3rem;
+    line-height: 3rem;
+    font-size: 2rem;
+    background: white;
+    border-radius: 10px 0 0 10px;
+    box-shadow: rgba(0,0,0,0.2) 2px 5px 10px;
+    position: fixed; /* Make it stay in the same position of the screen */
+    top: 80px;
+    right: 0rem;
+    text-align:center;
+    z-index: 99; /* Show on top of most things */
+}
+@media (min-width: 550px){
+    /* On bigger screens, make this button larger */
+    #floating-accessibility {
+        height: 4rem;
+        width: 4rem;
+        line-height: 4rem;
+        font-size:2.5rem;
+    }
+}
+/* When active, make it have no rounded borders so it integrates with the menu it pops up */
+#floating-accessibility.active{
+    border-radius: 0;
+}
+/* Menu of accessibility options */
+#accessibility-options {
+    overflow: hidden; /* So that background does not overflow from rounded borders */
+    border-radius: 10px 0 10px 10px; /* Only round top-left, bottom-left and bottom-right borders */
+    position: absolute; /* Absolute position relative to #floating-accessibility */
+    top: 0; /* Vertical position at the top of its parent  */
+    right: 100%; /* Horizontal position at the width of this element + width of parent from the right */
+    background-color: white; 
+    box-shadow: rgba(0,0,0,0.2) 2px 5px 10px;
+    display: none; /* Do not display by default */
+}
+#accessibility-options.active { 
+    display:block; /* If active, display */
+}
+/* The list of accessibility options */
+#accessibility-options-list {
+    list-style-type: none; /* No bullet points */
+    padding: 0;
+    margin: 0;
+    font-size: .4em;
+    width: 200px;
+}
+/* Active accessibility option */
+#accessibility-options-list li.active{
+    background-color: var(--dark-gray-bg); /* If enabled, it will display as a darker color */
+}
+
+/* --- Footer --- */
+/* The footer section */
 #footer{
     margin-top: auto;
     min-height: 150px;
     background-color: #f9f9f9;
-    border-top: 1px solid #e3e3e3;
+    border-top: 1px solid var(--gray-border);
 }
+/* Class to organize the footer boxes into a grid */
 .footer-rows{
     display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-flow: row dense;
+    grid-template-columns: 1fr; /* MOBILE ONLY: Stack on top of each other */
+    grid-auto-flow: row dense; /* Show each box as a row */
 }
-
+/* A box of information in the footer */
 .footer-box{
     width: 100%;
-    display: flex;
+    display: flex; /* To center elements horizontally */
     flex-direction: column;
     align-items: center;
     padding-bottom: 2rem;
 }
+/* Header of each footer-box */
 .footer-box h2 {
     margin-bottom: 5px;
+    color: #606060;
 }
+/* Special class for the social section */
 .footer-box-social {
     margin-top: 10px;
 }
+/* Special class for each social link */
 .footer-box-social a{
     color: var(--brand-color);
     font-size: 1.5rem;
     margin-right: 5px;
 }
+/* Links on a footer-box */
 .footer-box-links {
     margin-top: 5px;
 }
+/* Link styling for each link */
 .footer-box-links a {
     display: block;
     text-align: center;
     margin-bottom: 5px;
 }
+/* Paragraph styling for the address */
 .footer-box-address p {
     text-align: center;
     margin: 0;
 }
-.footer-box h2 {
-    color: #606060;
-}
+/* Style for all but the last child of the parent */
 .footer-box:not(:last-child):after{
-    content: '';
-    border-bottom: 1px solid rgb(192, 187, 187);
+    content: ''; 
+    border-bottom: 1px solid var(--gray-border); /* Show a horizontal bar below this box */
     width: 40%;
 }
 /* Larger than tablet */
 @media (min-width: 750px) {
     .footer-rows{
         grid-template-columns: 1fr 1fr 1fr; /* Allows for three sections */
-        grid-gap: 0.5rem;
+        grid-gap: 0.5rem; /* Add some spacing between sections */
         height: 100%;
     }
-
+    /* Do not display horizontal separators below */
     .footer-box:not(:last-child):after{
         display: none;
     }
 }
 
-/* Content */
-
+/* --- Content --- */
+/* A header section for pages to introduce the content */
 .content-header{
     box-sizing: border-box;    
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: #f5f5f5;
-    height: 120px;
+    background-color: var(--page-heading-bg-color);
+    min-height: 120px;
 }
-
-.page-heading{
-    color: #4e4e4e;
+@media (min-width: 980px){
+    /* If we are on bigger screens than the content max-width, we round images */
+    .content-header img {
+        border-radius: 10px;
+    }
 }
-
+/* If inner-container is within content-header, add padding */
+.content-header .inner-container{
+    padding: 0 0 10px 0;
+}
 /* Larger than phablet */
 @media (min-width: 550px) {
     .content-header .inner-container {
         flex: auto;
     }
 }
-
+/* Spacing for the main content */
 .main-content{
     margin-top: 20px;
 }
